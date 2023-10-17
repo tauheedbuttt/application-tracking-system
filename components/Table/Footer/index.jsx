@@ -24,7 +24,8 @@ const Footer = ({ pages }) => {
       <span className="text-sm font-normal text-gray-500 dark:text-gray-400 ">
         Showing
         <span className="font-semibold text-gray-900 dark:text-white mx-1">
-          1-10
+          {parseInt(page) * parseInt(limit) - parseInt(limit) + 1}-
+          {parseInt(page) * parseInt(limit)}
         </span>
         of
         <span className="font-semibold text-gray-900 dark:text-white ml-1">
