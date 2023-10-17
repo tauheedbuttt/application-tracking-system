@@ -3,7 +3,7 @@ export const queryToObject = (str) => {
     const keys = str.split("&");
     const obj = {};
     keys.forEach((item) => {
-        obj[item.split("=")[0]] = item.split("=")[1].replaceAll('+', ' ');
+        obj[item.split("=")[0]] = item.split("=")[1]?.replaceAll('+', ' ');
     });
     return obj;
 };

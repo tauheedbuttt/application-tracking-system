@@ -29,6 +29,26 @@ const Search = ({ onSearch, showFilter }) => {
 
   return (
     <div className="flex flex-col md:flex-row items-center justify-between space-y-3 md:space-y-0 md:space-x-4 p-4">
+      {showFilter && (
+        <button
+          onClick={showFilter}
+          className=" hover:bg-gray-200 p-4 rounded-lg"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            aria-hidden="true"
+            class="h-4 w-4 text-black"
+            viewbox="0 0 20 20"
+            fill="currentColor"
+          >
+            <path
+              fill-rule="evenodd"
+              d="M3 3a1 1 0 011-1h12a1 1 0 011 1v3a1 1 0 01-.293.707L12 11.414V15a1 1 0 01-.293.707l-2 2A1 1 0 018 17v-5.586L3.293 6.707A1 1 0 013 6V3z"
+              clip-rule="evenodd"
+            />
+          </svg>
+        </button>
+      )}
       <div className="w-full">
         <form className="flex items-center" onSubmit={onSubmit}>
           <label htmlFor="simple-search" className="sr-only">
@@ -62,23 +82,6 @@ const Search = ({ onSearch, showFilter }) => {
           </div>
         </form>
       </div>
-      {showFilter && (
-        <button onClick={showFilter}>
-          <svg
-            aria-hidden="true"
-            className="w-5 h-5 text-gray-500 dark:text-gray-400"
-            fill="currentColor"
-            viewBox="0 0 20 20"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              fillRule="evenodd"
-              d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-              clipRule="evenodd"
-            />
-          </svg>
-        </button>
-      )}
     </div>
   );
 };

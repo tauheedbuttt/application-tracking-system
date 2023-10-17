@@ -3,6 +3,7 @@ import React from "react";
 import Columns from "./Columns";
 import Footer from "./Footer";
 import Search from "./Search";
+import Drawer from "../Candidate/Drawer";
 
 const Table = ({ headers, rows, pages, showFilter }) => {
   return (
@@ -28,6 +29,7 @@ const Table = ({ headers, rows, pages, showFilter }) => {
           <Footer pages={pages} />
         </div>
       </div>
+      <Drawer />
     </section>
   );
 };

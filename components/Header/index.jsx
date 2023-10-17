@@ -12,7 +12,7 @@ const Header = () => {
     },
     {
       name: "Candidates",
-      path: "/candidates",
+      path: "/candidates?page=1&limit=10",
     },
     {
       name: "Settings",
@@ -91,10 +91,9 @@ const Header = () => {
           >
             <ul class="flex flex-col mt-4 font-medium lg:flex-row lg:space-x-8 lg:mt-0 gap-5">
               {pages?.map((item, index) => {
-                const active =
-                  currentPage == item.path
-                    ? "lg:text-white bg-white "
-                    : "text-gray-500 hover:text-white";
+                const active = item.path.includes(currentPage)
+                  ? "lg:text-white bg-white "
+                  : "text-gray-500 hover:text-white";
                 return (
                   <li key={index} onClick={() => setDropdown(false)}>
                     <Link
